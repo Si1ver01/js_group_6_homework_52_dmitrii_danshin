@@ -1,18 +1,17 @@
-import React from 'react'
-import './userPick.css'
+import React from "react";
+import "./userPick.css";
 
-
-const Userpick = props =>{
+const Userpick = props => {
   let status = "user-pick m-1 rounded";
-  if (props.pick){
-    status +=" picked"
+  if (props.pick) {
+    status += " picked";
   }
 
-  return(
-    <div className={status} onClick={props.activePick}>
-      <span>{props.usernumber}</span>
-    </div>
-  )
-}
+  return (
+    <span className={status} onClick={props.activePick}>
+      {props.usernumber}
+    </span>
+  );
+};
 
 export default Userpick;

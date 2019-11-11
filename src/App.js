@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Generatenumber from "./components/generateNumber/generateNumber.jsx";
 import Userpick from "./components/userPick/userPick.jsx";
@@ -67,39 +67,38 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
-        <div className="container d-flex justify-center align-items-center flex-column">
-          <h1 className="text-center">5 from 36</h1>
-          <button
-            onClick={this.generateUserPick}
-            className="btn btn-primary my-2"
-          >
-            Generate
-          </button>
-          <div className="number-wrap my-2">
-            {this.state.numbers.map((e, index) => (
-              <Generatenumber number={e} key={index} />
-            ))}
-          </div>
-
-          {this.state.userpick.length ? (
-            <p className="text-info">Сhoose six number's 🡇</p>
-          ) : null}
-          {this.state.result.length ? (
-            <Result result={this.state.result.join(", ")} />
-          ) : null}
-          <div className="userPick-wrap my-2">
-            {this.state.userpick.map((e, index) => (
-              <Userpick
-                key={index}
-                usernumber={e.nubmer}
-                pick={e.pick}
-                activePick={() => this.activePick(index)}
-              />
-            ))}
-          </div>
+      <div className="container d-flex justify-center align-items-center flex-column">
+        <h1 className="text-center">5 from 36</h1>
+        <button
+          onClick={this.generateUserPick}
+          className="btn btn-primary my-2"
+        >
+          Generate
+        </button>
+        <div className="number-wrap my-2">
+          {this.state.numbers.map((e, index) => (
+            <Generatenumber number={e} key={index} />
+          ))}
         </div>
-      </Fragment>
+
+        {this.state.userpick.length ? (
+          <p className="text-info">Сhoose six number's 🡇</p>
+        ) : null}
+        {this.state.result.length ? (
+          <Result result={this.state.result.join(", ")} />
+        ) : null}
+
+        <div className="userPick-wrap my-2">
+          {this.state.userpick.map((e, index) => (
+            <Userpick
+              key={index}
+              usernumber={e.nubmer}
+              pick={e.pick}
+              activePick={() => this.activePick(index)}
+            />
+          ))}
+        </div>
+      </div>
     );
   }
 }
