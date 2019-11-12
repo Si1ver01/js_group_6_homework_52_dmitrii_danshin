@@ -29,7 +29,7 @@ class App extends Component {
     const max = 36;
     const numbers = [];
     while (numbers.length < 5) {
-      const randomNumber = Math.round(Math.random() * (max - min) + min);
+      const randomNumber = Math.floor(Math.random() * (max - min) + min);
       if (!numbers.find(elem => elem === randomNumber)) {
         numbers.push(randomNumber);
       }
