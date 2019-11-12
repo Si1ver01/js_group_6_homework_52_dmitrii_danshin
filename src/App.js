@@ -34,11 +34,7 @@ class App extends Component {
         numbers.push(randomNumber);
       }
     }
-    console.log(numbers)
     numbers.sort((a,b) => a-b);
-    console.log(numbers)
-    
-
     this.setState({ numbers });
   };
 
